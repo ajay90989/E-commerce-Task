@@ -36,6 +36,11 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(cookieParser());
 
 // API Response Time Logger
+
+app.use('/', (req, res) => {
+  res.send("Server Started!")
+})
+
 app.use((req, res, next) => {
   const start = Date.now();
   res.on("finish", () => {
