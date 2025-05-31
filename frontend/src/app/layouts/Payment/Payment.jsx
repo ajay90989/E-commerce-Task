@@ -50,7 +50,7 @@ const PaymentHistory = () => {
 
                 <td className="px-4 py-2">{payment.productDetails.name}</td>
 
-                <td className="px-4 py-2">{payment.order_id}</td>
+              
                 <td className="px-4 py-2">₹{payment.amount.toFixed(2)}</td>
                 <td
                   className={`px-4 py-2 font-semibold ${payment.status === "completed"
