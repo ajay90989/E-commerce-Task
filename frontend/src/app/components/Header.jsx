@@ -65,13 +65,7 @@ const Header = () => {
               } z-50`}
           >
             <div className="py-2">
-              <Link
-                to="/profile"
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                onClick={() => setIsDropdownVisible(false)}
-              >
-                My Profile
-              </Link>
+             
               <Link
                 to="/payment"
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
