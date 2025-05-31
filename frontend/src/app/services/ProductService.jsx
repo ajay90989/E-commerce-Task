@@ -50,8 +50,8 @@ export const uploadToCloudinary = async (file) => {
     formData.append("file", file);
     // formData.append("upload_preset", "my_unsigned_preset");
     // formData.append("cloud_name", "dlpeqbowx");
-    formData.append("upload_preset", process.env.cloud_name);
-    formData.append("cloud_name", process.env.cloud_name);
+    formData.append("upload_preset", process.env.REACT_APP_preset_name);
+    formData.append("cloud_name", process.env.REACT_APP_cloud_name);
 
 
     try {
