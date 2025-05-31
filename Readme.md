@@ -148,4 +148,4 @@ VITE_STRIPE_PUBLIC_KEY=your_stripe_public_key
 
 **Just ask! Happy coding!** 💻✨
 
-![Screenshot](assets/img/Screenshot_37.png)
+![Screenshot](https://github.com/ajay90989/E-commerce-Task/blob/main/harsh123/my-project/main/public/assets/img/Screenshot_37.png)
