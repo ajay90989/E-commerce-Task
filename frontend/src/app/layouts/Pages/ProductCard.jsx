@@ -44,12 +44,12 @@ const ProductCard = ({ product }) => {
           Rs
           {product?.price}
         </p>
-      {product.stock == 1 ?  <button
+        {product.stock == 1 ? <button
           className="max-sm:hidden px-4 py-1.5 text-gray-500 border border-gray-500/20 rounded-full text-xs hover:bg-slate-50 transition"
           onClick={(e) => CreatePayment(product)}
         >
           Buy now
-        </button> :"Out of Stock"}
+        </button> : "Out of Stock"}
       </div>
     </div>
   );
