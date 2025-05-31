@@ -72,7 +72,7 @@ Built with **React (Vite)**, **Node.js (Express)**, **MongoDB**, **Stripe**, and
 ```bash
 cd backend
 npm install
-npm run dev
+nodemon app
 ```
 > Runs at: [http://localhost:8080](http://localhost:8080)
 
