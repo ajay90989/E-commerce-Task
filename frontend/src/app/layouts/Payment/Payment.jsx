@@ -36,7 +36,7 @@ const PaymentHistory = () => {
 
               <th className="px-4 py-2 text-left">Product Name</th>
 
-              <th className="px-4 py-2 text-left">Payment ID</th>
+          
 
               <th className="px-4 py-2 text-left">Amount</th>
               <th className="px-4 py-2 text-left">Status</th>
