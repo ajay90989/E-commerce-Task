@@ -128,7 +128,11 @@ VITE_STRIPE_PUBLIC_KEY=your_stripe_public_key
 
 ## 📸 Screenshots
 
-> _Add screenshots of your UI, admin dashboard, and payment flow here for better presentation!_
+![Screenshot](https://res.cloudinary.com/dsuvis7qq/image/upload/v1748694364/ehfblze9auvkdx2twlew.png)
+![Screenshot](https://res.cloudinary.com/dsuvis7qq/image/upload/v1748694389/inb8j4y2wgvqasqrpiay.png)
+![Screenshot](https://res.cloudinary.com/dsuvis7qq/image/upload/v1748694022/z8rqave2ouw7rke2naku.png)
+![Screenshot](https://res.cloudinary.com/dsuvis7qq/image/upload/v1748694002/brc0lvdeyqyiylvwiyhb.png)
+![Screenshot](https://res.cloudinary.com/dsuvis7qq/image/upload/v1748693893/kx8hhr6vh2yhydure204.png)
 
 ---
 
@@ -147,5 +151,3 @@ VITE_STRIPE_PUBLIC_KEY=your_stripe_public_key
 - Looking for a logo or favicon?
 
 **Just ask! Happy coding!** 💻✨
-
-![Screenshot](https://github.com/ajay90989/E-commerce-Task/blob/main/harsh123/my-project/main/public/assets/img/Screenshot_37.png)

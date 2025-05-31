@@ -45,13 +45,16 @@ export const deleteProduct = async (data) => {
 };
 
 
+const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+
+const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
+
+
 export const uploadToCloudinary = async (file) => {
     const formData = new FormData();
     formData.append("file", file);
-    // formData.append("upload_preset", "my_unsigned_preset");
-    // formData.append("cloud_name", "dlpeqbowx");
-    formData.append("upload_preset", process.env.REACT_APP_preset_name);
-    formData.append("cloud_name", process.env.REACT_APP_cloud_name);
+    formData.append("upload_preset", "my_unsigned_preset");
+    formData.append("cloud_name", "dsuvis7qq");
 
 
     try {
