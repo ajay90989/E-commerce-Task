@@ -28,7 +28,7 @@ const corsOptions = {
   ],
   credentials: true,
 };
-app.use(cors(corsOptions));
+app.use(cors("*"));
 
 // Parsing Middleware
 app.use(express.json({ limit: "50mb" }));
