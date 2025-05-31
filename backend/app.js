@@ -28,7 +28,7 @@ const corsOptions = {
   ],
   credentials: true,
 };
-app.use(cors("*"));
+app.use(cors(corsOptions));
 
 // Parsing Middleware
 app.use(express.json({ limit: "50mb" }));
@@ -36,11 +36,6 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(cookieParser());
 
 // API Response Time Logger
-
-app.use('/', (req, res) => {
-  res.send("Server Started!")
-})
-
 app.use((req, res, next) => {
   const start = Date.now();
   res.on("finish", () => {
