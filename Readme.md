@@ -14,29 +14,29 @@ Built with **React (Vite)**, **Node.js (Express)**, **MongoDB**, **Stripe**, and
 
 ## 🧩 Tech Stack
 
-| **Layer**      | **Technology**                |
-|:--------------:|:-----------------------------|
-| Frontend       | React.js (Vite) ⚛️           |
-| Backend        | Node.js (Express) 🚀         |
-| Database       | MongoDB 🍃                    |
-| Auth/Roles     | JWT, Admin 👑 / User 🧑‍💻     |
-| Payments       | Stripe 💳                     |
-| Media Upload   | Cloudinary ☁️                |
+|  **Layer**   | **Technology**          |
+| :----------: | :---------------------- |
+|   Frontend   | React.js (Vite) ⚛️      |
+|   Backend    | Node.js (Express) 🚀    |
+|   Database   | MongoDB 🍃              |
+|  Auth/Roles  | JWT, Admin 👑 / User 🧑‍💻 |
+|   Payments   | Stripe 💳               |
+| Media Upload | Cloudinary ☁️           |
 
 ---
 
 ## ✨ Features
 
-- **Modern UI/UX** for browsing & purchasing products  
-- **Role-based access** (Admin/User)  
-- **JWT Authentication & Authorization**  
-- **Stripe payment gateway** with success/cancel flow  
-- **Cloudinary** for image upload & management  
-- **Order & payment tracking** in MongoDB  
-- **Admin dashboard** for product & order management  
-- **Responsive design** for all devices  
-- **Secure API** with CORS, Helmet, and error handling  
-- **API response time logger** for performance monitoring  
+- **Modern UI/UX** for browsing & purchasing products
+- **Role-based access** (Admin/User)
+- **JWT Authentication & Authorization**
+- **Stripe payment gateway** with success/cancel flow
+- **Cloudinary** for image upload & management
+- **Order & payment tracking** in MongoDB
+- **Admin dashboard** for product & order management
+- **Responsive design** for all devices
+- **Secure API** with CORS, Helmet, and error handling
+- **API response time logger** for performance monitoring
 
 ---
 
@@ -74,6 +74,7 @@ cd backend
 npm install
 nodemon app
 ```
+
 > Runs at: [http://localhost:8080](http://localhost:8080)
 
 ---
@@ -85,6 +86,7 @@ cd frontend
 npm install
 npm run dev
 ```
+
 > Runs at: [http://localhost:5173](http://localhost:5173)
 
 ---
@@ -94,6 +96,7 @@ npm run dev
 > **Create `.env` files in both `/frontend` and `/backend`. Never commit them!**
 
 **Backend `.env` Example:**
+
 ```
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
@@ -105,6 +108,7 @@ CLOUDINARY_API_SECRET=your_api_secret
 ```
 
 **Frontend `.env` Example:**
+
 ```
 VITE_API_URL=http://localhost:5000
 VITE_STRIPE_PUBLIC_KEY=your_stripe_public_key
@@ -114,11 +118,11 @@ VITE_STRIPE_PUBLIC_KEY=your_stripe_public_key
 
 ## 🛠️ Integrations
 
-- **Stripe**: Secure payment processing  
-- **Cloudinary**: Image upload & CDN  
-- **JWT**: Secure authentication  
-- **Mongoose**: MongoDB ODM  
-- **Helmet & CORS**: Security middlewares  
+- **Stripe**: Secure payment processing
+- **Cloudinary**: Image upload & CDN
+- **JWT**: Secure authentication
+- **Mongoose**: MongoDB ODM
+- **Helmet & CORS**: Security middlewares
 
 ---
 
@@ -143,3 +147,5 @@ VITE_STRIPE_PUBLIC_KEY=your_stripe_public_key
 - Looking for a logo or favicon?
 
 **Just ask! Happy coding!** 💻✨
+
+![Screenshot](assets/img/Screenshot_37.png)
