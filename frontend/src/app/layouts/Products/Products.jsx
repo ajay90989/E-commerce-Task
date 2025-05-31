@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { addProduct, getAllProducts, uploadToCloudinary, updateProduct, deleteProduct } from "../../services/ProductService"
+import {
+    addProduct,
+    getAllProducts,
+    uploadToCloudinary,
+    updateProduct,
+    deleteProduct,
+} from "../../services/ProductService";
 
 const ProductTable = () => {
     const [products, setProducts] = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
     const [isEdit, setIsEdit] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [imageFile, setImageFile] = useState(null);
     const [currentProduct, setCurrentProduct] = useState({
         _id: null,
@@ -58,16 +64,14 @@ const ProductTable = () => {
         setCurrentProduct({ ...currentProduct, [name]: val });
     };
 
-
-
-
-
     const handleFormSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
 
         try {
-
-            const imageUrl = imageFile ? await uploadToCloudinary(imageFile) : currentProduct.image_url
+            const imageUrl = imageFile
+                ? await uploadToCloudinary(imageFile)
+                : currentProduct.image_url;
 
             const productData = { ...currentProduct, image_url: imageUrl };
 
@@ -81,15 +85,19 @@ const ProductTable = () => {
             setModalOpen(false);
         } catch (err) {
             console.error("Error saving product", err);
+        } finally {
+            setLoading(false);
         }
     };
 
     const handleDelete = async (id) => {
-        const confirmDelete = window.confirm("Are you sure you want to delete this product?");
+        const confirmDelete = window.confirm(
+            "Are you sure you want to delete this product?"
+        );
         if (!confirmDelete) return;
 
         try {
-            await deleteProduct(id)
+            await deleteProduct(id);
             fetchProducts();
         } catch (err) {
             console.error("Error deleting product", err);
@@ -123,7 +131,9 @@ const ProductTable = () => {
                         <tr key={prod._id} className="hover:bg-gray-50">
                             <td className="p-2 border">{prod.name}</td>
                             <td className="p-2 border">{prod.price}</td>
-                            <td className="p-2 border">{prod.stock}</td>
+                            <td className="p-2 border">
+                                {prod.stock === 1 ? "In Stock" : "Out of Stock"}
+                            </td>
                             <td className="p-2 border">
                                 {prod.image_url && (
                                     <img
@@ -155,7 +165,15 @@ const ProductTable = () => {
             {/* Modal */}
             {modalOpen && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-                    <div className="bg-white p-6 rounded shadow-lg w-full max-w-md">
+                    <div className="bg-white p-6 rounded shadow-lg w-full max-w-md relative">
+                        <style>
+                            {`
+                                @keyframes spin {
+                                    0% { transform: rotate(0deg); }
+                                    100% { transform: rotate(360deg); }
+                                }
+                            `}
+                        </style>
                         <h2 className="text-lg font-semibold mb-4">
                             {isEdit ? "Edit Product" : "Add Product"}
                         </h2>
@@ -190,6 +208,7 @@ const ProductTable = () => {
                                 name="stock"
                                 value={currentProduct.stock}
                                 onChange={handleInputChange}
+                                className="w-full border p-2"
                             >
                                 <option value="">Select Stock Status</option>
                                 <option value="1">In Stock</option>
@@ -215,14 +234,32 @@ const ProductTable = () => {
                                     type="button"
                                     onClick={() => setModalOpen(false)}
                                     className="px-4 py-2 border rounded"
+                                    disabled={loading}
                                 >
                                     Cancel
                                 </button>
                                 <button
                                     type="submit"
-                                    className="bg-blue-600 text-white px-4 py-2 rounded"
+                                    disabled={loading}
+                                    className="bg-blue-600 text-white px-4 py-2 rounded flex items-center justify-center"
+                                    style={{ minWidth: "100px" }}
                                 >
-                                    {isEdit ? "Update" : "Add"}
+                                    {loading ? (
+                                        <div
+                                            style={{
+                                                width: "20px",
+                                                height: "20px",
+                                                border: "3px solid #fff",
+                                                borderTop: "3px solid transparent",
+                                                borderRadius: "50%",
+                                                animation: "spin 1s linear infinite",
+                                            }}
+                                        ></div>
+                                    ) : isEdit ? (
+                                        "Update"
+                                    ) : (
+                                        "Add"
+                                    )}
                                 </button>
                             </div>
                         </form>
