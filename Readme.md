@@ -139,8 +139,8 @@ VITE_STRIPE_PUBLIC_KEY=your_stripe_public_key
 ## 👤 Author
 
 **Your Name**  
-📬 [your.email@example.com](mailto:your.email@example.com)  
-🔗 [GitHub](https://github.com/yourusername)
+📬 [ajay.patidar90989@gmail.com](mailto:ajay.patidar90989@gmail.com)  
+🔗 [GitHub](https://github.com/ajay90989)
 
 ---
 
