@@ -19,6 +19,7 @@ export async function login(data, token) {
 
 
 export async function Registerinfo(data, token) {
+    
     try {
         const res = await axios.post(`${Config.base_url}register`, data, {
             data: {},

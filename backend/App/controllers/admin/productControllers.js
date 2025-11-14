@@ -4,7 +4,7 @@ const Stripe = require("stripe");
 const Product = db.product;
 const PaymentModel = db.payment;
 
-const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+// const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 class ProductController {
   async addProduct(req, res) {
@@ -190,7 +190,7 @@ class ProductController {
           price_data: {
             currency: "usd",
             product_data: {
-              name: product.name, 
+              name: product.name,
             },
             unit_amount: product.price * 100,
           },
@@ -201,8 +201,8 @@ class ProductController {
       const paymentData = new PaymentModel({
         user_id: user_id1,
         order_id: null,
-        product_id: product._id, 
-        quantity: items.quantity, 
+        product_id: product._id,
+        quantity: items.quantity,
         amount: totalAmount,
         payment_method: "credit_card",
         status: "pending",
@@ -253,7 +253,7 @@ class ProductController {
       }
 
       payment.status = "completed";
-      payment.order_id = session.id; 
+      payment.order_id = session.id;
       await payment.save();
 
       res.redirect("http://localhost:5173/#/success?payment_id=" + payment._id);

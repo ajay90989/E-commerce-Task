@@ -4,6 +4,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const db = require("../../models");
 const User = db.user;
+let JWT_SECRET = "AjayKuchBhiSecretDeDo123"
+
 
 class AuthController {
 
@@ -31,7 +33,7 @@ class AuthController {
 
       const token = jwt.sign(
         { id: user._id, role: user.role },
-        process.env.SECRET,
+        JWT_SECRET,
         { expiresIn: "1h" }
       );
 
@@ -64,6 +66,8 @@ class AuthController {
   async register(req, res) {
     try {
       const { FullName, Email, Password, PhoneNo } = req.body;
+
+
 
       if (!FullName || !Email || !Password || !PhoneNo) {
         return res.json({ status: false, message: "All fields are required" });
